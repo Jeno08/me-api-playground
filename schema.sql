@@ -1,4 +1,4 @@
--- schema.sql - SQLite Profile Database for Me-API Playground
+-- SQLite Profile Database for Me-API Playground
 
 CREATE TABLE IF NOT EXISTS profile (
     id INTEGER PRIMARY KEY AUTOINCREMENT,

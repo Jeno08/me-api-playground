@@ -11,17 +11,17 @@
     </style>
 </head>
 <body>
-    <h1>🚀 Melfin Jeno - Developer Portfolio API</h1>
+    <h1> Melfin Jeno - Developer Portfolio API</h1>
     <p>Click buttons to query my live resume API!</p>
     
-    <button onclick="loadProfile()">👤 View Full Profile</button>
-    <button onclick="loadTopSkills()">⭐ Show Top Skills</button>
+    <button onclick="loadProfile()"> View Full Profile</button>
+    <button onclick="loadTopSkills()"> Show Top Skills</button>
     
     <input id="skillInput" placeholder="e.g. Python" />
-    <button onclick="loadProjects()">🔍 Filter Projects</button>
+    <button onclick="loadProjects()"> Filter Projects</button>
     
     <input id="searchInput" placeholder="e.g. Jeno" />
-    <button onclick="search()">🔎 Search</button>
+    <button onclick="search()"> Search</button>
     
     <div id="results">Click a button to start!</div>
 
@@ -33,7 +33,7 @@
                 const res = await fetch(`${API_BASE}/profile`);
                 const data = await res.json();
                 document.getElementById('results').innerHTML = `
-                    <h2>👤 Profile</h2>
+                    <h2> Profile</h2>
                     <p><strong>Name:</strong> ${data.name}</p>
                     <p><strong>Email:</strong> ${data.email}</p>
                     <p><strong>Education:</strong> ${data.education}</p>
@@ -41,7 +41,7 @@
                     <ul>${data.projects.map(p => `<li>${p}</li>`).join('')}</ul>
                 `;
             } catch(e) { 
-                document.getElementById('results').innerHTML = '❌ Start backend first: python app.py'; 
+                document.getElementById('results').innerHTML = 'Start backend first: python app.py'; 
             }
         }
         
@@ -49,8 +49,8 @@
             const res = await fetch(`${API_BASE}/skills/top`);
             const data = await res.json();
             document.getElementById('results').innerHTML = `
-                <h2>⭐ Top Skills</h2>
-                <ul>${data.top_skills.map(s => `<li>✅ ${s}</li>`).join('')}</ul>
+                <h2> Top Skills</h2>
+                <ul>${data.top_skills.map(s => `<li> ${s}</li>`).join('')}</ul>
             `;
         }
         
@@ -60,8 +60,8 @@
             const res = await fetch(url);
             const projects = await res.json();
             document.getElementById('results').innerHTML = `
-                <h2>🔍 Projects ${skill ? `for "${skill}"` : '(all)'}</h2>
-                ${projects.length ? `<ul>${projects.map(p => `<li><strong>${p}</strong></li>`).join('')}</ul>` : '<p>❌ No projects</p>'}
+                <h2> Projects ${skill ? `for "${skill}"` : '(all)'}</h2>
+                ${projects.length ? `<ul>${projects.map(p => `<li><strong>${p}</strong></li>`).join('')}</ul>` : '<p> No projects</p>'}
             `;
         }
         
@@ -70,8 +70,8 @@
             const res = await fetch(`${API_BASE}/search?q=${q}`);
             const results = await res.json();
             document.getElementById('results').innerHTML = `
-                <h2>🔎 Search "${q}"</h2>
-                ${results.length ? results.map(r => `<p>✅ Found: ${r.name}</p>`).join('') : '<p>❌ No results</p>'}
+                <h2> Search "${q}"</h2>
+                ${results.length ? results.map(r => `<p> Found: ${r.name}</p>`).join('') : '<p> No results</p>'}
             `;
         }
     </script>

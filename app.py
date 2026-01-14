@@ -76,7 +76,7 @@ def seed_data():
         email="dominer08@gmail.com",  
         education="B.Tech AI/ML - Joy University, 4th Year",
         skills="Python, Flask, SQL, Machine Learning, PyTorch, TensorFlow",
-        projects="WhatsApp Chatbot|||NEET Tutor AI|||Compiler Simulator|||Predictive Analytics",
+        projects="WhatsApp Chatbot using Python and Flask|||NEET Tutor AI using ML models|||Compiler Simulator in Python|||Predictive Analytics with Python",
         work_links="github.com/Jeno08, linkedin.com/in/yourprofile"
     )
     db.session.add(p)

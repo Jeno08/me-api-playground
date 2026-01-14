@@ -21,7 +21,7 @@ CREATE TABLE profile (
     email VARCHAR(100),          -- "dominer08@gmail.com"
     education TEXT,              -- "B.Tech AI/ML - Joy University, 4th Year"
     skills TEXT,                 -- "Python, Flask, SQL, Machine Learning, PyTorch, TensorFlow"
-    projects TEXT,               -- "WhatsApp Chatbot|||NEET Tutor AI|||Compiler Simulator|||Predictive Analytics"
+    projects TEXT,               -- "WhatsApp Chatbot using Python and Flask, NEET Tutor AI using ML models, Compiler Simulator in Python, Predictive Analytics with Python"
     work_links TEXT              -- "github.com/Jeno08, linkedin.com/in/yourprofile"
 );
 
@@ -42,7 +42,7 @@ curl http://localhost:5000/health
 curl http://localhost:5000/profile
 
 # Filter Python projects
-curl "http://localhost:5000/projects?skill=python"
+curl http://localhost:5000/projects?skill=Python
 
 # Top skills
 curl http://localhost:5000/skills/top
