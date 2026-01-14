@@ -31,10 +31,18 @@ class Profile(db.Model):
 def health():
     return jsonify({'status': 'ok'}), 200
 
-@app.route('/profile', methods=['GET'])
+@app.route('/profile')
 def profile():
-    p = Profile.query.first()
-    return jsonify(p.to_dict()) if p else jsonify({'error': 'No profile yet'})
+    return {
+        "name": "Melfin Jeno",
+        "email": "jeno@example.com",
+        "phone": "+91-9876543210",
+        "skills": "Python, Flask, SQLAlchemy, JavaScript, HTML/CSS",
+        "github": "https://github.com/Jeno08",
+        "linkedin": "https://linkedin.com/in/jeno08",
+        "projects": ["WhatsApp Chatbot", "Resume API", "Portfolio Frontend"]
+    }
+
 
 @app.route('/projects', methods=['GET'])
 def get_projects():
