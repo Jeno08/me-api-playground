@@ -8,6 +8,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 CORS(app)
 
+@app.route('/')
+def index():
+    return jsonify({
+        'message': 'Me-API Playground Live!', 
+        'endpoints': ['/health', '/profile', '/projects', '/skills/top', '/search']
+    })
+
 class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
@@ -35,7 +42,6 @@ def health():
 def profile():
     p = Profile.query.first()
     return jsonify(p.to_dict()) if p else jsonify({'error': 'No profile yet'})
-
 
 @app.route('/projects', methods=['GET'])
 def get_projects():
