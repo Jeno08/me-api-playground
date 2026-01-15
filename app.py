@@ -33,8 +33,8 @@ def health():
 
 @app.route('/profile', methods=['GET'])
 def profile():
-    p = Profile.query.first()
-    return jsonify(p.to_dict()) if p else jsonify({'error': 'No profile yet'})
+    p = Profile.query.first()
+    return jsonify(p.to_dict()) if p else jsonify({'error': 'No profile yet'})
 
 
 @app.route('/projects', methods=['GET'])
